@@ -1,0 +1,723 @@
+
+/* Fonts import */
+
+@font-face {
+  font-family: 'Gravity';
+  src: url('../fonts/Gravity-Regular.otf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Gravity';
+  src: url('../fonts/Gravity-Bold.otf');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Signatura Monoline Script';
+  src: url('../fonts/Signatura_Monoline.ttf');
+  font-weight: 400;
+}
+
+.cursive {
+  font-family: 'Rhesmanisa Regular';
+  font-weight: 400;
+  font-size: 1.5em;
+}
+
+/*
+ * Designed (from scratch) by...
+ * Webdesk Studio - A creative web-development agency
+ * Website: https://webdesk.studio | Email: hello@webdesk.studio
+ * Let's build something great together!
+ */
+
+/* Basic Reset */
+  
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, input, textarea, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  line-height: 1
+}
+
+ol, ul {
+  list-style: none
+}
+
+blockquote, q {
+  quotes: none
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0
+}
+
+/* Common Styles */
+
+*, *:before, *:after {
+  box-sizing: border-box
+}
+
+html {
+  height: 100%
+}
+
+audio, canvas, iframe, img, svg, video {
+  max-width: 100%;
+  vertical-align: middle
+}
+
+hr {
+  width: 50%;
+  border: 0;
+  margin: 0 auto;
+  height: 1px;
+  border-top: 1px dashed;
+}
+
+::selection {
+  background: #b3d4fc
+}
+
+/* Typography */
+
+body, input, select, textarea {
+  font: 400 16px/1.618 'Open Sans', sans-serif;
+}
+  
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  line-height: 1;
+  vertical-align: baseline;
+  word-spacing: normal;
+  margin: 0 0 0.67em 0;
+}
+
+h1 {font-size: 6rem}
+h2 {font-size: 3.75rem}
+h3 {font-size: 3rem}
+h4 {font-size: 2.125rem}
+h5 {font-size: 1.5em}
+h6 {font-size: 1rem}
+
+@media screen and (max-width: 768px) {
+  h1 {font-size: 6rem}
+  h2 {font-size: 3.75rem}
+  h3 {font-size: 3rem}
+  h4 {font-size: 2.125rem}
+  h5 {font-size: 1em}
+  h6 {font-size: 1rem}
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.618;
+  margin: 0 0 5vh 0;
+}
+
+@media screen and (max-width: 768px) {
+  p {font-size: 16px}
+}
+
+a {
+  text-decoration: none;
+}
+
+b, strong {
+  font-weight: 700;
+}
+
+i, em {
+  font-style: italic;
+}
+
+.big {
+  font-size: 140%
+}
+
+small {
+  font-size: 80%
+}
+
+.hindi {
+  font-family: 'Eczar', serif;
+  line-height: 1.618;
+}
+
+h1.hindi, h2.hindi, h3.hindi, h4.hindi, h5.hindi, h6.hindi {
+  font-weight: 400;
+}
+
+.mark {
+  color: #ff7f00;
+}
+
+.dull {
+  opacity: 0.3;
+}
+
+.subtitle {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  display: inline-block;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+/* Blockquotes */
+
+blockquote {
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  position: relative;
+}
+
+blockquote p {
+  padding: 0;
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1.618;
+  margin: 0 0 0.5rem 0;
+}
+
+blockquote cite {
+  float: right;
+  display: block;
+  font-size: 14px;
+  font-style: normal;
+}
+
+blockquote cite:before {
+  content: "\2014 \0020";
+}
+
+blockquote::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* Reusable styles */
+
+.margin--0 {margin: 0;}
+.hidden {display: none}
+.list {padding: 0 3rem}
+ul.list {list-style-type: disc}
+ol.list {list-style-type: decimal}
+.list p {margin: 0}
+.list li {margin: 0 0 0.5rem 0}
+.list li:last-of-type {margin: 0}
+
+/* Clearfix */
+.clear::before, .clearfix::after {
+  content: ""; display: block
+}
+
+.clear::after {
+  clear: both
+}
+
+.container {
+  width: 80%;
+  max-width: 960px;
+  height: inherit;
+  margin: 0 auto;
+  position: relative;
+  /*border: 1px dashed rgba(0,0,0,0.2)*/
+}
+
+#header {
+  width: 100%;
+  height: 6rem;
+  background: #fff;
+  display: none;
+}
+
+#header .header--inner {
+  display: grid;
+  grid-template-columns: 256px 1fr 256px;
+  align-items: center;
+}
+
+.logo {
+  float: left;
+  width: 256px;
+  line-height: 1;
+  margin: 8px 0 0 0;
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  align-items: center;
+}
+
+.logo .title {
+  color: #ff7f00;
+  font-family: 'Anton', sans-serif;
+  margin: 8px 0 0 0;
+  font-size: 4.5rem;
+  font-weight: 400;
+  line-height: 0.425;
+}
+
+.logo .title span {
+  color: #000;
+  font-family: 'Gravity', sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 7.5px;
+}
+
+.call-to-action {
+  text-align: right;
+}
+
+#nav {
+  text-align: center
+}
+
+.nav-list li {
+  display: inline-block;
+  margin: 0 0 0 3vw;
+}
+
+.nav-list li:first-child {
+  margin: 0;
+}
+
+.nav-item {
+  color: #000;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+main {
+  border: 2px solid;
+}
+
+article {
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+article p {font-size: 18px;}
+
+/*********************************************
+****************** Home Page *****************
+*********************************************/
+
+.banner {
+  width: 100%;
+  height: 120vh;
+  position: relative;
+}
+
+.banner-content {
+  width: 640px;
+  text-align: center;
+  font-size: 1.125rem;
+  line-height: 1;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%) translateY(-60%);
+}
+
+.banner-content--inner {
+  display: grid;
+  grid-template-columns: 256px 364px;
+  grid-gap: 20px;
+  align-items: center;
+}
+
+.banner .img {
+  width: 256px;
+  height: 256px;
+  background: #fff;
+  border: 2px solid #fff;
+  border-left: .5px;
+  border-radius: 50%;
+  box-shadow: 0.5rem 0.5rem 1rem rgba(0,0,0,0.3);
+}
+
+.banner .title {
+  margin: 0.5rem 0 1.5rem -1rem;
+  font-family: 'Signatura Monoline Script', sans-serif;
+  font-size: 10rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.banner .title + span {
+  display: block;
+  font-family: sans-serif;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  letter-spacing: 1.68rem;
+}
+
+.banner p {
+  font-size: 15px;
+  margin: 0.5rem 0 0 0;
+}
+
+@media screen and (max-width: 768px) {
+  .banner-content {width: 256px;}
+  .banner-content--inner {
+    grid-template-columns: 100%;
+  }
+  .banner .img {
+    width: 156px;
+    display: none;
+  }
+  .banner .title {
+    font-size: 8rem;
+  }
+  .banner .title + span  {
+    font-size: 12px;
+    letter-spacing: 1.125rem;
+  }
+}
+
+/* Quick Intro */
+
+.quick-intro .mission .list {padding: 0}
+.quick-intro--inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5vh;
+}
+
+@media screen and (max-width: 768px) {
+  .quick-intro {padding: 5rem 0}
+  .quick-intro--inner {
+    display: grid;
+    grid-gap: 5vh;
+    grid-template-columns: repeat(1, 1fr);
+    -moz-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  .quick-intro--inner > div, .quick-intro .mission .list {padding: 0 1.5rem}
+}
+
+.tabs--header {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.tab {
+  padding: 1.5rem;  
+  text-align: center;
+}
+
+.tab.active {
+  background: #fd9704
+}
+
+.tab-content .container {
+  padding: 5rem;
+  background: #fd9704
+}
+
+/* About --Page */
+
+.introduction, .mission {padding: 5rem 0}
+
+/* Team */
+
+.team {
+  padding: 8rem 0;
+  background-blend-mode: overlay;
+}
+
+.team-members {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 3vh;
+}
+
+.team img {
+  width: 256px;
+  position: relative;
+}
+
+.team img::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 4px solid #0b3ba7;
+}
+
+.team-card {
+  text-align: center;
+  background: #fff;
+}
+
+.team-card-info {
+  padding: 1.5rem;
+}
+
+#donation {
+  padding: 8rem 0;
+  text-align: center;
+  background: #ff7f00;
+}
+
+.donation-content {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.donation-content .cursive {
+  font-size: 8rem;
+}
+
+/* Event */
+
+.event {
+  margin: 0 0 8rem 0;
+  background: #f3f3f3;
+}
+
+.event-details {
+  padding: 3rem;
+}
+
+/* Layout */
+
+#primary-content {
+  display: grid;
+  grid-gap: 5vw;
+  grid-template-columns: 300px 1fr;
+  grid-template-areas: "sidebar content";
+  background: #fff;
+}
+
+#content {
+  padding: 8rem 0;
+  grid-area: content;
+}
+
+#sidebar {
+  position: fixed;
+  width: 320px;
+  padding: 8rem 0;
+  grid-area: sidebar;
+}
+
+@media screen and (max-width: 768px) {
+  #primary-content {
+    grid-template-columns: 100%;
+    grid-template-areas: "sidebar" "content";
+  }
+  #sidebar {position: relative; padding: 0; opacity: 0.5;}
+}
+
+#sidebar .quicklinks.list {padding: 1.5rem}
+
+#sidebar a {
+  margin: 0 0 1rem 0
+  line-height: 1;
+  font-size: 17px;
+  color: #000;
+  font-weight: 700
+}
+
+#sidebar li a.active,
+#sidebar li a:hover,
+#sidebar li a:active {
+  color: #ff7f00;
+}
+
+#content {
+  overflow: hidden
+}
+
+/* Card */
+
+.card {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  grid-gap: 5vh;
+  position: relative;
+}
+
+.card-media img {width: 100%}
+
+.name-card {
+  padding: 1.5rem;
+  text-align: center;
+  line-height: 1;
+  background: #ff7f00
+}
+
+.name-card .title {margin: 0}
+.name-card .card-designation {
+  font-size: 14px;
+}
+
+.card-info {
+  padding: 1.5rem 0;
+}
+
+footer {
+  width: 100%;
+  height: 8em;
+  line-height: 1.25;
+  background: transparent;
+}
+
+.footer-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2vh;
+  align-items: center;
+}
+
+footer .social-icons a {
+  color: #000;
+}
+
+footer .social-icons li {
+  display: inline-block;
+  margin: 0 0 0 2vw;
+}
+
+footer ion-icon {
+  font-size: 24px;
+}
+
+.footer-copy {
+  text-align: right;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(0,0,0,0.7) 20%, rgba(0,0,0,0.3) 80%);
+}
+
+.overlay_light {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 20%, rgba(0,0,0,0.2) 80%);
+}
+
+/* Forms */
+
+form {
+  padding: 5em;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+fieldset {
+  position: relative;
+  margin-bottom: .5em;
+}
+
+input, textarea {
+  display: block;
+  width: 100%;
+  height: 3em;
+  padding: 1.5em 0;
+  font-size: 1.25em;
+  appearance: none;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+textarea {
+  min-height: 3.5em;
+}
+
+textarea:focus, textarea[data-empty="false"] {
+  height: auto;
+  border: 1px solid
+}
+
+label {
+  position: absolute;
+  top: 1.5rem;
+  left: 0;
+  color: #777;
+  font-size: 14px;
+  transform: translate3d(0, 0, 0);
+  transition: all 0.2s ease-in-out;
+}
+
+input[data-empty="false"], input:valid, input:focus,
+textarea[data-empty="false"], textarea:valid, textarea:focus {
+  padding: 22px 0 10px;
+}
+
+input[data-empty="false"] + label, input:valid + label, input:focus + label,
+textarea[data-empty="false"] + label, textarea:focus + label {
+  color: #5856d6;
+  font-weight: 700;
+  font-size: 12px;
+  transform: translate3d(0,-1.5rem,0);
+}
+
+/* Buttons */
+
+.button {
+  display: inline-block;
+  min-width: 156px;
+  height: 56px;
+  line-height: 56px;
+  text-align: center;
+  padding: 0 3rem;
+  margin: 2vh 0 0 0;
+  color: #ff7f00;
+  font-weight: 700;
+  text-decoration: none;
+  background: #000;
+  border: 2px solid #000;
+  border-radius: 43.5px;
+}
+
+.secondary-btn {
+  color: #0b3ba7;
+  background: #fff;
+  border-color: #fff;
+}
+
+/*
+ * Color Pallete
+ * Blue (Dark)  - #0b3ba7
+ * Blue (Light) - #145ce6
+ * Orange       - #fd9704
+ */
