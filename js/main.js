@@ -1,5 +1,25 @@
 $(document).ready(function() {
 
+  // Shrink Header
+  $(window).on('scroll', function() {
+		if($(document).scrollTop() >= 100) {
+			$('.header-container').addClass('shrinked');
+		} else {
+			$('.header-container').removeClass('shrinked');
+		}
+	});
+	
+	// Toggle Navigation
+  $('#nav-trigger').on('click', function () {
+    $('#nav').fadeToggle();
+		$(this).toggleClass('change');
+		if($(this).hasClass('change')) {
+			$('html').css('overflow', 'hidden')
+		} else {
+			$('html').css('overflow', 'auto')
+		}
+  });
+
 	$('.quicklinks a').click(function(){
 		$(this).each(function(){
 			$('.quicklinks a').removeClass('active');
