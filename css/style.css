@@ -593,13 +593,9 @@ article p {font-size: 18px;}
   background: #fff;
 }
 
-.donation {
-  border: solid 2px green;
-}
 
 .donation .title {
-  border: solid 2px red;
-  line-height: 70px;
+  line-height: 1.3;
 }
 
 /* About --Page */
@@ -965,3 +961,45 @@ textarea[data-empty="false"] + label, textarea:focus + label {
  * Blue (Light) - #145ce6
  * Orange       - #fd9704
  */
+
+ /*contact*/
+
+#contact {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 3vh;
+}
+
+.contact-details {
+  padding: 3rem;
+  border: solid 5px navy;
+}
+
+.contact-details h4 {
+  font-size: 2rem;
+}
+
+.contact-details ul li {
+  line-height: 30px;
+  margin-top: 10px;
+}
+.contact-details i  {
+  font-size: 20px;
+}
+.contact-details a  {
+  max-width: 200px;
+  font-size: 20px;
+  line-height: none;
+  color: #000;
+}
+
+@media screen and (max-width: 768px) { 
+ #contact {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 3vh;
+ }
+
+}
