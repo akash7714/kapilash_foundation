@@ -1,7 +1,13 @@
 $(document).ready(function() {
 
-  // Shrink Header
+  // Header
   $(window).on('scroll', function() {
+		if($(document).scrollTop() >= 300) {
+			$('.home.header-container').css("top", "0");
+		} else {
+			$('.home.header-container').css("top", "-100%");
+		}
+
 		if($(document).scrollTop() >= 100) {
 			$('.header-container').addClass('shrinked');
 		} else {

@@ -95,20 +95,23 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 0.67em 0;
 }
 
-h1 {font-size: 6rem}
-h2 {font-size: 3.75rem}
-h3 {font-size: 3rem}
-h4 {font-size: 2.125rem}
-h5 {font-size: 1.5em}
+h1 {font-size: 3.375rem}
+h2 {font-size: 3rem}
+h3 {font-size: 2.1875rem}
+h4 {font-size: 1.875rem}
+h5 {font-size: 1.25em}
 h6 {font-size: 1rem}
 
 @media screen and (max-width: 768px) {
-  h1 {font-size: 6rem}
-  h2 {font-size: 3.75rem}
-  h3 {font-size: 3rem}
-  h4 {font-size: 2.125rem}
-  h5 {font-size: 1em}
-  h6 {font-size: 1rem}
+  h1 {font-size: 2.8125rem}
+  h2 {font-size: 2.5rem}
+  h3 {font-size: 1.75rem}
+  h4 {font-size: 1.5rem}
+}
+
+@media screen and (max-width: 425px) {
+  h1 {font-size: 2.25rem}
+  h2 {font-size: 2rem}
 }
 
 p {
@@ -241,6 +244,12 @@ ol.list {list-style-type: decimal}
   height: 7rem;
   background: #fff;
   box-shadow: 0 6px 12px rgba(0,0,0,0.1)
+  transition: all 0.3s ease-in;
+}
+
+.home.header-container {
+  top: -100%;
+  transition: all 0.3s ease-in;
 }
 
 #header {
@@ -283,6 +292,7 @@ ol.list {list-style-type: decimal}
 }
 
 #nav {
+
 }
 
 .nav-items li {
@@ -450,10 +460,11 @@ article p {font-size: 18px;}
 
 .banner {
   width: 100%;
-  height: 60vh;
+  height: 120vh;
   min-height: 480px;
   position: relative;
-  background: url('../images/banner.jpg') center top;
+  background: #333 url('../images/kids.jpg') center top;
+  background-blend-mode: overlay;
   background-size: cover
 }
 
@@ -461,12 +472,12 @@ article p {font-size: 18px;}
   width: 640px;
   text-align: center;
   font-size: 1.125rem;
+  color: #fff;
   line-height: 1;
   top: 50%;
   left: 50%;
   position: absolute;
   transform: translateX(-50%) translateY(-60%);
-  display: none;
 }
 
 .banner-content--inner {
@@ -487,11 +498,12 @@ article p {font-size: 18px;}
 }
 
 .banner .title {
-  margin: 0.5rem 0 1.5rem -1rem;
+  margin: 0 0 0 -1rem;
   font-family: 'Signatura Monoline Script', sans-serif;
-  font-size: 10rem;
-  font-weight: 400;
+  font-size: 8rem;
+  font-weight: 700;
   line-height: 1;
+  color: #fff;
 }
 
 .banner .title + span {
@@ -545,7 +557,7 @@ article p {font-size: 18px;}
 .intro .latest-events ul li {margin-bottom: .5rem}
 
 .events--home {
-  margin: 2vh 0 7rem;
+  margin: 2vh 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -576,7 +588,9 @@ article p {font-size: 18px;}
 .events--home .event-name .subtitle {margin: 0}
 
 .donation {
-  text-align: center
+  padding: 3vw;
+  text-align: center;
+  background: #fff;
 }
 
 .donation {
@@ -657,22 +671,6 @@ article p {font-size: 18px;}
 
 .card-info {
   padding: 1.5rem 0;
-}
-
-
-#donation {
-  padding: 8rem 0;
-  text-align: center;
-  background: #ff7f00;
-}
-
-.donation-content {
-  max-width: 520px;
-  margin: 0 auto;
-}
-
-.donation-content .cursive {
-  font-size: 8rem;
 }
 
 /* Event */
@@ -778,7 +776,7 @@ footer {
   grid-gap: 5vw;
 }
 
-footer .nav-item {
+.footer-nav-item {
   color: #fff;
   line-height: 1.618;
   height: auto;
@@ -821,7 +819,7 @@ footer ion-icon {
   width: 100%;
   height: 100%;
   background: linear-gradient(45deg, #0b3ba7 20%, #ff7f00 80%);
-  opacity: 0.8;
+  opacity: 0.7;
   /*background: linear-gradient(45deg, rgba(0,0,0,0.8) 20%, rgba(0,0,0,0.3) 80%);*/
 }
 
@@ -875,6 +873,7 @@ input[type="submit"] {
   display: inline-block;
   height: 4.5rem;
   line-height: 1;
+  font-size: 1rem;
   padding: 0 !important;
   margin: 0;
 }
@@ -916,9 +915,17 @@ textarea[data-empty="false"] + label, textarea:focus + label {
   display: grid;
   grid-template-columns: 1fr 210px;
   align-items: center;
+  margin-bottom: 2rem;
 }
-.donate-form input[type="email"] {
+
+@media screen and (max-width: 768px) {
+  .donate-form {
+    grid-template-columns: repeat(1, 1fr)
+  }
+
+  .donate-form .button {margin-top: 3rem}
 }
+
 .donate-form fieldset {margin: 0}
 
 /* Buttons */
@@ -934,9 +941,22 @@ textarea[data-empty="false"] + label, textarea:focus + label {
   color: #fff;
   font-weight: 700;
   text-decoration: none;
+  cursor: pointer;
   background: #000;
   background: linear-gradient(45deg, #0b3ba7 20%, #ff7f00 80%);
+  background-size: 100% 100%;
   border-radius: 43.5px;
+  -moz-transition: all 0.3s ease-in;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+.button:hover {
+  background-size: 150% 100%;
+  moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
 }
 
 /*
